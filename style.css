@@ -1,0 +1,199 @@
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #canvas {
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #hero {
+            background: url("Egame-ai-art/hero_clear.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: 10%;
+            top: 10%;
+            width: 6%;
+            height: 16%;
+        }
+
+        #person {
+            position: absolute;
+            left: 31%;
+            top: 47%;
+            width: 14%;
+            height: 47%;
+        }
+
+        #hero_face {
+            position: absolute;
+            left: 68%;
+            top: 40%;
+            width: 14%;
+            height: 55%;
+        }
+
+        #mathCanvas {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: lightblue;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #inputCanvas {
+            position: absolute;
+            left: 50%;
+            top: 60%; /* Position below the mathCanvas */
+            transform: translate(-50%, -50%);
+            background-color: lightgray; /* Background color for input canvas */
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #answerInput {
+            width: 100px; /* Width of the input field */
+            margin-right: 10px; /* Space between input and button */
+        }
+
+        #start-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        #start-button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            font-family: "Tiny5", serif;
+        }
+
+        #completion-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #dialog {
+            position: absolute;
+            left: 5%;
+            top: 12%;
+            width: 47%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: left;
+            font-size: 16px;
+            color: black;
+            display: none;
+            font-family: "Tektur", sans-serif;
+        }
+
+        #dialog_hero {
+            position: absolute;
+            left: 63%;
+            top: 12%;
+            width: 30%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: left;
+            font-size: 16px;
+            color: black;
+            display: none;
+            font-family: "Tektur", sans-serif;
+        }
+
+        p {
+        	font-family: "Tiny5", serif;
+        	//font-weight: bold;
+        }
+
+        button {
+		    /*width: 15%;
+		    height: 5%;*/
+		    border: none;
+		    outline: none;
+		    color: #fff;
+		    background: #111;
+		    cursor: pointer;
+		    position: relative;
+		    z-index: 0;
+		    border-radius: 10px;
+		    font-family: "Press Start 2P", system-ui;
+		    font-size: 1em;
+		}
+
+		button:before {
+		    content: '';
+		    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+		    position: absolute;
+		    top: -2px;
+		    left:-2px;
+		    background-size: 400%;
+		    z-index: -1;
+		    filter: blur(5px);
+		    width: calc(100% + 4px);
+		    height: calc(100% + 4px);
+		    animation: glowing 20s linear infinite;
+		    opacity: 0;
+		    transition: opacity .3s ease-in-out;
+		    border-radius: 10px;
+		}
+
+		button:active {
+		    color: #000
+		}
+
+		button:active:after {
+		    background: transparent;
+		}
+
+		button:hover:before {
+		    opacity: 1;
+		}
+
+		button:after {
+		    z-index: -1;
+		    content: '';
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    background: #111;
+		    left: 0;
+		    top: 0;
+		    border-radius: 10px;
+		}
+
+		@keyframes glowing {
+		    0% { background-position: 0 0; }
+		    50% { background-position: 400% 0; }
+		    100% { background-position: 0 0; }
+		}
